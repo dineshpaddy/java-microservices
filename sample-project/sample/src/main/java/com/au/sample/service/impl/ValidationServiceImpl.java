@@ -4,6 +4,7 @@ import com.au.sample.exceptions.InvalidPageSizeException;
 import com.au.sample.exceptions.InvalidTransactionIdException;
 import com.au.sample.service.ValidationService;
 import lombok.Builder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Matcher;
@@ -18,17 +19,19 @@ import static java.util.Objects.isNull;
 import static java.util.regex.Pattern.compile;
 
 @Service
-//@Builder
+@Builder
+@Slf4j
 public class ValidationServiceImpl implements ValidationService {
 
 
     private static final Pattern TRANSACTION_ID_PATTERN =
             compile("^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$");
     @Override
-    public void validateHeaderAndPageSize(final Integer size, final String transactionID)
+    public String validateHeaderAndPageSize(final Integer size, final String transactionID)
             throws InvalidPageSizeException, InvalidTransactionIdException {
-
+        log.info("#### validating page size #### ");
         if (!isNull(size) && size.compareTo(DEFAULT_PAGE_SIZE) > 0) {
+            log.info("#### incorrect page size #### ");
             throw new InvalidPageSizeException(format(INVALID_PAGE_SIZE_EXCEPTION_MESSAGE,"size",DEFAULT_PAGE_SIZE));
         }
 
@@ -40,6 +43,7 @@ public class ValidationServiceImpl implements ValidationService {
         } else {
             throw new InvalidTransactionIdException(TRANSACTIONID_NOT_FOUND_EXCEPTION_MESSAGE);
         }
+        return null;
     }
 
 }

@@ -10,6 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ValidationService {
 
-    public void validateHeaderAndPageSize(final Integer size, final String transactionId) throws InvalidPageSizeException, InvalidTransactionIdException;
+    public String validateHeaderAndPageSize(final Integer size, final String transactionId) throws InvalidPageSizeException, InvalidTransactionIdException;
 
 }

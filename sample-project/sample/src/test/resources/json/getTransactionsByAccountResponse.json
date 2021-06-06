@@ -1,0 +1,41 @@
+{
+  "accountNumber": "321145205",
+  "accountName": "SGSavings205",
+  "transactionDetails": [
+    {
+      "valueDate": "05-03-2021",
+      "currency": "SGD",
+      "amount": 134.21,
+      "type": "Debit",
+      "narrative": "Groceries"
+    },
+    {
+      "valueDate": "09-03-2021",
+      "currency": "SGD",
+      "amount": 1200.0,
+      "type": "Credit",
+      "narrative": "Transfer to Mayank"
+    },
+    {
+      "valueDate": "12-03-2021",
+      "currency": "SGD",
+      "amount": 120.0,
+      "type": "Credit",
+      "narrative": "Internet Reimbursment"
+    },
+    {
+      "valueDate": "18-03-2021",
+      "currency": "SGD",
+      "amount": 1800.0,
+      "type": "Debit",
+      "narrative": "Rent deduction"
+    },
+    {
+      "valueDate": "27-03-2021",
+      "currency": "SGD",
+      "amount": 110.11,
+      "type": "Debit",
+      "narrative": "electricity bill"
+    }
+  ]
+}

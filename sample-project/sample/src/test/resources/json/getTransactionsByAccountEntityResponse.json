@@ -1,0 +1,44 @@
+[
+  {
+    "account" : {
+      "number": "791066619",
+      "name": "AUSavings619",
+      "type": "Savings",
+      "balanceDate": "2021-02-08",
+      "currency": {
+        "id": 2,
+        "name": "AUD"
+      },
+      "openingAvailableBalance": 4526.11,
+      "user": {
+        "firstName": "Dinesh",
+        "lastName": "Padmanabhan"
+      }
+    },
+    "valueDate" : "2021-03-05",
+    "amount" : 134.21,
+    "type" : "Debit",
+    "narrative" : "Groceries"
+  },
+  {
+    "account" : {
+      "number": "321145205",
+      "name": "SGSavings205",
+      "type": "Savings",
+      "balanceDate": "2021-03-21",
+      "currency": {
+        "id": 2,
+        "name": "AUD"
+      },
+      "openingAvailableBalance": 12474.0,
+      "user": {
+        "firstName": "Dinesh",
+        "lastName": "Padmanabhan"
+      }
+    },
+    "valueDate" : "2021-03-09",
+    "amount" : 1200.21,
+    "type" : "Credit",
+    "narrative" : "Transfer to Mayank"
+  }
+]

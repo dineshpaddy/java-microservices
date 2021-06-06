@@ -1,0 +1,17 @@
+[
+  {
+    "number": "791066619",
+    "name": "AUSavings619",
+    "type": "Savings",
+    "balanceDate": "08-01-2021",
+    "currency": {
+      "id": 2,
+      "name": "AUD"
+    },
+    "openingAvailableBalance": 4526.11,
+    "user": {
+      "firstName": "Dinesh",
+      "lastName": "Padmanabhan"
+    }
+  }
+]

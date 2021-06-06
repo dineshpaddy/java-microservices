@@ -1,0 +1,20 @@
+{
+    "accountNumber": "791066619",
+    "accountName": "AUSavings619",
+    "transactionDetails" :  [
+        {
+            "valueDate": "05-03-2021",
+            "currency": "AUD",
+            "amount": 134.21,
+            "type": "Debit",
+            "narrative": "Groceries"
+        },
+        {
+            "valueDate": "09-03-2021",
+            "currency": "AUD",
+            "amount": 1200.21,
+            "type": "Credit",
+            "narrative": "Transfer to Mayank"
+        }
+    ]
+}

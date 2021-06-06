@@ -1,0 +1,34 @@
+[
+  {
+    "number": "791066619",
+    "name": "AUSavings619",
+    "type": "Savings",
+    "balanceDate": "08-01-2021",
+    "currency": "AUD",
+    "openingAvailableBalance": 4526.11
+  },
+  {
+    "number": "947398538",
+    "name": "AUSavings538",
+    "type": "Savings",
+    "balanceDate": "12-01-2021",
+    "currency": "AUD",
+    "openingAvailableBalance": 42342.64
+  },
+  {
+    "number": "486192526",
+    "name": "AUSavings526",
+    "type": "Savings",
+    "balanceDate": "22-04-2021",
+    "currency": "AUD",
+    "openingAvailableBalance": 4523.19
+  },
+  {
+    "number": "703572948",
+    "name": "AUSavings948",
+    "type": "Savings",
+    "balanceDate": "29-01-2021",
+    "currency": "AUD",
+    "openingAvailableBalance": 12445.0
+  }
+]

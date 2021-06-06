@@ -9,6 +9,7 @@ import com.au.sample.model.entity.Account;
 import com.au.sample.model.entity.Transaction;
 import com.au.sample.model.entity.User;
 import com.au.sample.service.AccountService;
+import com.au.sample.service.ValidationService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +31,19 @@ import static com.au.sample.common.SampleUtil.convertDate;
 @Slf4j
 public class AccountServiceImpl implements AccountService {
 
-    @Autowired
     private AccountRepositoryDAO accountRepositoryDAO;
 
-    @Autowired
     private TransactionRepositoryDAO transactionRepositoryDAO;
 
-    @Autowired
     private ModelMapper modelMapper;
+
+    public AccountServiceImpl(final AccountRepositoryDAO accountRepositoryDAO,
+                              final TransactionRepositoryDAO transactionRepositoryDAO,
+                              final ModelMapper modelMapper) {
+        this.accountRepositoryDAO = accountRepositoryDAO;
+        this.transactionRepositoryDAO = transactionRepositoryDAO;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
     public List<AccountDTO> getAccountsByUser(Integer userId, Integer page, Integer size) {
@@ -48,6 +54,7 @@ public class AccountServiceImpl implements AccountService {
         Integer pageSize = (size == null || size ==0) ? DEFAULT_PAGE_SIZE: size;
         Pageable pageWithElements = PageRequest.of(pageNumber-1, pageSize, Sort.Direction.ASC,"id");
         List<Account> accountList = accountRepositoryDAO.findByUser(user,pageWithElements);
+        log.info("List of acounts fetched from repository : {}", accountList);
         List<AccountDTO> accountDTOList = accountList.parallelStream()
                 .map(this::convertAccountToDto)
                 .collect(Collectors.toList());
@@ -64,6 +71,7 @@ public class AccountServiceImpl implements AccountService {
         Integer pageSize = (size == null || size ==0) ? DEFAULT_PAGE_SIZE: size;
         Pageable pageWithElements = PageRequest.of(pageNumber-1, pageSize, Sort.Direction.ASC,"id");
         List<Transaction> transactionList = transactionRepositoryDAO.findByAccount(account,pageWithElements);
+        log.info("List of transactions fetched from repository : {}", transactionList);
         TransactionDTO transactionDTO = null;
         if (transactionList.size() != 0) {
             transactionDTO = TransactionDTO.builder().build();
@@ -76,6 +84,7 @@ public class AccountServiceImpl implements AccountService {
             transactionList.stream().forEach(transaction -> log.info("Transaction details for the account {} is : {}",
                     transaction.getAccount().getNumber(), transaction));
         }
+        log.info("Final transaction response : {}", transactionDTO);
         return transactionDTO;
     }
 

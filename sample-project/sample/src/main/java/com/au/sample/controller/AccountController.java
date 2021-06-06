@@ -8,7 +8,6 @@ import com.au.sample.model.dto.TransactionDTO;
 import com.au.sample.service.AccountService;
 import com.au.sample.service.ValidationService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -39,10 +38,9 @@ public class AccountController {
         this.accountService = accountService;
         this.validationService = validationService;
     }
-//    @Autowired
+
     private final AccountService accountService;
 
-//    @Autowired
     private final ValidationService validationService;
 
     @GetMapping(path = "user/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,7 +54,6 @@ public class AccountController {
                                                 @RequestHeader final HttpHeaders httpHeaders)
             throws InvalidPageSizeException, InvalidTransactionIdException {
         log.info("HttpHeaders : {}", httpHeaders);
-        log.info("validationService : {}" ,validationService);
         validationService.validateHeaderAndPageSize(size, transactionId);
         List<AccountDTO> accountDTOList  = accountService.getAccountsByUser(userId,page,size);
         return accountDTOList.size() == 0 ? recordNotFoundException(userId) :
