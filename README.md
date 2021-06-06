@@ -16,8 +16,8 @@ Technology used
 Notes
 #########################
 
-1.The project is executable. It can be checked out and run.
-2.There are two endpoints exposed at part of this sample.
+1. The project is executable. It can be checked out and run.
+2. There are two endpoints exposed at part of this sample.
 3. Both the endpoints are GET endpoints. 
 4. The swagger file can be found at http://localhost:8080/swagger-ui/
 5. The h2 database can be viewed at http://localhost:8080/h2-console
