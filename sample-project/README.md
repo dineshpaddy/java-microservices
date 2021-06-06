@@ -1,4 +1,4 @@
-# java-microservices
+# Sample application to expose two GET endpoints for account and its subsequent transactions
 #######################
 Technology used
 #######################
