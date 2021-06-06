@@ -1,4 +1,4 @@
-# Sample application to expose two GET endpoints for account and its subsequent transactions
+# Sample application to expose two GET endpoints
 #######################
 Technology used
 #######################
